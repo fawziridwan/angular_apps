@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html data-ng-app="">
+    <head>
+        <title>Using Angular Data Binding</title>
+        <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body data-ng-init="names=[{name:'john',city:'phoenix'},{name:'ridwan',city:'bandung'}]">
+        Name :
+        <br/>
+        <input type="text" data-ng-model="name"> {{ name }}
+        <ul>
+            <li data-ng-repeat="personName in names | filter:name | orderBy:city">
+                {{ personName.name | uppercase }} - {{ personName.city | lowercase}}
+            </li>
+        </ul>
+    </body>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+</html>
